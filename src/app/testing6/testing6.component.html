@@ -1,0 +1,48 @@
+<div class="filter-panel">
+
+  <button class="filter-option">Sort by</button>
+  <button class="filter-option">Price</button>
+  <button class="filter-option">Book Instantly</button>
+  <button class="filter-option">Delivery</button>
+  <button class="filter-option">More Filters</button>
+  
+</div>
+
+<div class="content">
+
+  <div class="car-container">
+
+    <div class="car-grid">
+
+      <div *ngFor="let car of [].constructor(10)" class="car-card">
+        
+        <div class="img-container"> <img src="https://d1zgdcrdir5wgt.cloudfront.net/media/vehicle/images/UfRMCMHvTbeAAQWntH22ZA.730x390.jpg"></div>
+
+       
+
+        <div class="car-card-footer">
+          <div class="title">Skoda Fabia (2014)</div>
+          <div class="rating">5.0 (1 Trip)</div>
+          <hr>
+          <div class="info">
+            <div class="tag">Book now, save £12</div>
+            <div class="price">35/day</div>
+          </div>
+        </div>
+        
+      </div>
+
+    </div>
+
+    Cars go here
+  </div>
+
+  <div class="map-container">
+    <div class="search-checkbox">
+      <input type="checkbox">
+      <div>Search for cars whilst I move the map</div>
+    </div>
+    <div id="map"></div>
+  </div>
+
+</div>

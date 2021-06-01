@@ -1,0 +1,65 @@
+<div [style.height.px]="height" [ngClass]="{'dragging': grabber}" class="bottom-bar">
+    <div #dragHandler class="dragHandler"></div>
+
+    <div class="panel-header">
+
+        <!-- Noraml Version -->
+        <ng-container *ngIf="!moveableTabs">
+            <div class="tab-container">
+                <ng-container *ngFor="let tab of tabs; let i = index;">
+                    <div [ngClass]="{'selected' : tab.show }" (click)="selectTab(tab, i)" class="tab">
+                        {{ tab.tabTitle }}
+                    </div>
+                </ng-container>
+            </div>
+        </ng-container>
+
+        <!-- Drag and drop version -->
+        <ng-container *ngIf="moveableTabs">
+            <div cdkDropList class="tab-container" cdkDragBoundary=".tab-container" cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event)">
+                <ng-container *ngFor="let tab of tabs; let i = index;">
+                    <div cdkDrag [ngClass]="{'selected' : tab.show }" (click)="selectTab(tab, i)" class="tab" (cdkDragStarted)="cdkDragStart($event)">
+                        <div [style.width.px]="placeholderWidth" class="example-custom-placeholder" *cdkDragPlaceholder></div>
+                        {{ tab.tabTitle }}
+                    </div>
+                </ng-container>
+            </div> 
+        </ng-container>
+
+        <div class="action-container">
+
+            <div ngbDropdown class="d-inline-block">
+                <div class="action" (click)="add()" ngbDropdownToggle ngbTooltip="More Options">
+                    <fa-icon [icon]="faPlus"></fa-icon>
+                </div>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button ngbDropdownItem>Action - 1</button>
+                    <button ngbDropdownItem>Another Action</button>
+                    <button ngbDropdownItem>Something else is here</button>
+                  </div>
+            </div>
+
+            <!-- <div class="action" (click)="splitView()">
+                <fa-icon [icon]="faColumns"></fa-icon>
+            </div> -->
+
+            <div class="action" (click)="fullscreen()" ngbTooltip="Fullscreen">
+                <fa-icon [icon]="!fullScreen ? faExpand : faCompress"></fa-icon>
+            </div>
+
+            <div class="action" (click)="togglePanel()" [ngbTooltip]="showPanel ? 'Close Panel' : 'Open Panel'">
+                <fa-icon [icon]="showPanel ? faChevronDown : faChevronUp"></fa-icon>
+            </div>
+            
+        </div>
+        
+    </div>
+
+    <div class="panel-content">   
+
+        <ng-content></ng-content>
+
+    </div>
+
+    
+</div>

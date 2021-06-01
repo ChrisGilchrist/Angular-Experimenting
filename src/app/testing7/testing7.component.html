@@ -1,0 +1,22 @@
+<div class="play-cards-container">
+
+
+    <div *ngIf="selected" class="selected">
+        <div class="play-card selected">
+            {{ selected.id }}
+        </div>
+    </div>
+
+
+    <!-- <div class="play-card test1">1 card</div>
+
+    <div class="play-card test2">2 card</div>
+
+    <div class="play-card test3">3 card</div>
+ -->
+
+    <div [ngStyle]="calcPosition(card.id)" *ngFor="let card of cards" class="play-card" (click)="cardSelected(card)">
+        {{ card.id }}
+    </div>
+
+</div>

@@ -1,0 +1,30 @@
+<div class="results-container">
+    <mat-grid-list cols="4" rowHeight="1:1" gutterSize="10">
+        <mat-grid-tile *ngFor="let item of items">
+            <div class="card">
+
+                <div class="image" [ngStyle]="{'background-image': 'url(' + item.url + ')'}">
+
+                </div>
+
+                <div class="info">
+                    <div class="">{{ item.title }}</div>
+                    <div class="">{{ item.description }}</div>
+                    <div class="">{{ item.title }}</div>
+
+                    <div class="btn-container">
+                    <button class="viewBtn">View this car</button>
+                </div>
+                </div>
+
+                
+
+
+
+            </div>
+
+
+
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

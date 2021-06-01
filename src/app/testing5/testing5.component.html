@@ -1,0 +1,14 @@
+<div id="wrapper" class="wrapper">
+
+    <div class="section-controller">
+
+        <div [attr.id]="item.id" [ngClass]="item.id === selectedSection.id ? 'current-section' : ''" class="section" *ngFor="let item of sections" (click)="sectionSelected(item)">
+            
+        </div>
+
+    </div>
+
+    <div [ngStyle]="{backgroundColor: section.color}" class="section" *ngFor="let section of sections; let i = index">
+        Section {{ i + 1 }}
+    </div>   
+</div>

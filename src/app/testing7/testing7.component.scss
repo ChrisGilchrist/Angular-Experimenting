@@ -1,0 +1,51 @@
+.play-cards-container {
+    position: relative;
+    display: flex;
+    padding-top: 20px;
+    //justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: calc(100vh - 50px);
+    background: rgb(0,174,239);
+
+    .play-card {
+        position: absolute;
+        width: 150px;
+        height: 250px;
+        border-radius: 5px;
+        //background-image: url('https://i.pinimg.com/originals/10/80/a4/1080a4bd1a33cec92019fab5efb3995d.png');
+        //background-position: center;
+        //background-size: cover;
+        transform-origin: center 450px;
+        background-color: white;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        color: white;
+    }
+
+    .play-card::after {
+        content: '';
+        position: absolute;
+        background: rgb(130,90,164);
+        height: 90%;
+        width: 85%;
+        border-radius: 5px;
+    }
+    
+    .play-card:hover {
+        background: rgb(130,90,164);
+    }
+
+    .selected {
+        position: absolute;
+        top: 40px;
+        left: 40px;
+    }
+
+    .removed {
+        display: none;
+    }
+}

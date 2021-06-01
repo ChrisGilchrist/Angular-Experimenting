@@ -1,0 +1,52 @@
+:host {
+    display: flex;
+    height: calc(100vh - 50px);
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    outline: none !important;
+}
+
+.side-panel {
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    
+    .content {
+        padding: 20px;
+    }
+}
+
+.filter-overlay-container {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+    .content {
+        background-color: white;
+        display: flex;
+        border-radius: 35px;
+        padding: 15px;
+
+
+        .option {
+            margin: 0 40px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .selected {
+            color: rgb(64, 64, 243);
+        }
+
+    }
+}
+
+.popup .mapboxgl-popup-content  {
+    background-color: red;
+}

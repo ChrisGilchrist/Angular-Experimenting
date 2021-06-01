@@ -1,0 +1,75 @@
+<div class="page-container">
+
+    <div class="creator-container">
+
+        <div class="left-side">
+            
+            <div class="header-section">
+                <input type="text" class="form-control" placeholder="Enter name of restaraunt" [(ngModel)]="title">
+            </div>
+
+            <div class="editor-section">
+
+                <div class="toolbar">
+                    <div class="icons">
+                        <div class="icon" *ngFor="let icon of icons" (click)="iconClick(icon)">
+                            <fa-icon [icon]="icon"></fa-icon>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="editor">
+                    <textarea (keyup)="onValueChange($event)" [(ngModel)]="editorBody"></textarea>
+                </div>
+
+                <div class="footer">
+                    <div class="info">
+                        <div>
+                            <div [hidden]="!showMarkdownHelp">
+                                 Click <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">here</a> for more info on the markdown language
+                            </div>
+                           
+                        </div>
+                        <fa-icon [icon]="faInfo" (click)="showMarkdownHelp =! showMarkdownHelp"></fa-icon>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+    
+        <div class="right-side">
+            
+            <div class="preview-section">
+
+                <div class="header">
+                    <h2>{{ title }}</h2>
+                </div>
+
+                <div class="preview">
+                    <markdown [ngClass]="alignSetting === textAligns.LEFT ? 'text-left' : alignSetting === textAligns.CENTER ? 'text-center' : alignSetting === textAligns.RIGHT ? 'text-right' : ''" 
+                    class="variable-binding" [data]="editorBody"></markdown>
+                </div>
+            
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="right-sidebar">
+    <p>
+        Scan this QR code with your phone to see your menu live 
+        while editing it (or click it):
+    </p>
+
+    <div class="qr-code">
+        <a rel='nofollow' href='https://www.qr-code-generator.com' border='0' style='cursor:default'><img src='https://chart.googleapis.com/chart?cht=qr&chl=http%3A%2F%2Flocalhost%3A4200%2Ftest2&chs=180x180&choe=UTF-8&chld=L|2' alt=''></a>
+    </div>
+
+    <div class="footer">
+        <button type="button">Generate QR Code</button>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="page-wrapper">
+
+    <div class="row no-gutters">
+        <div class="col-md-8">
+            <div class="card card-body m-3">
+                Chart
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-body m-3">
+                Current Average Grade
+            </div>
+        </div>
+    </div>
+
+    <div class="row no-gutters">
+        <div class="col-md-6">
+            <div class="card card-body m-3">
+                List of Modules
+
+
+
+                <div class="modules mt-3">
+                    <div *ngFor="let module of modules" class="module py-2 border-bottom d-flex justify-content-between">
+                        <div class="font-weight-bold">{{ module.name }}</div>
+                        <div>{{ module.credits }}</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-body m-3">
+                Hello
+            </div>
+        </div>
+    </div>
+
+</div>

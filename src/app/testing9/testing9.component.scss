@@ -1,0 +1,167 @@
+.wrapper {
+    display: flex;
+ 
+    .gallery {
+        align-self: flex-start;
+        flex: 1;
+        position: sticky;
+        height: 100%;
+        overflow: hidden;
+        top: 0;
+
+        .control {
+            position: absolute;
+            top: 50%;
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: grey;
+            cursor: pointer;
+        }
+
+        .left {
+            left: 50px;
+        }
+
+        .right {
+            right:50px;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .side-bar {
+        width: 370px;
+        margin-top: 10px;
+        height: 200vh;
+              
+        .form-container {
+            margin-right: 35px;
+
+            .info {
+                background-color: #f4f4f4;
+                display: flex;
+                padding: 15px;
+                border-radius: 10px;
+
+                .icon {
+                    color: rgb(62, 106, 225);
+                    margin-right: 10px;
+                    font-size: 20px;
+                }
+
+                .text {
+                    color: #5c5e62;
+                    display: flex;
+                    flex-direction: column;
+                    font-weight: 600;
+
+                    a {
+                        text-decoration: underline;
+                        color: #5c5e62;
+                    }
+                }
+            }
+
+            .title-section {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                margin: 30px 0;
+                color: #5c5e62;
+                .title {
+                    color: black;
+                    font-size: 25px;
+                }
+
+                .sub-title {
+                    font-weight: 14px;
+                }
+            }
+
+            .stats {
+                margin: 20px 0;
+                display: flex;
+                color: black;
+                .stat {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin: 0 10px;
+                    .value {
+                        font-weight: 600;
+                        .num {
+                            font-size: 18px;
+                        }
+                        .measure {
+                            font-size: 16px;
+                        }
+                    }
+
+                    .title {
+                        color: #5c5e62;
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            .drive-section {
+                .title {
+                    margin: 5px;
+                }
+                .button {
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: space-between;
+                    box-shadow: inset 0 0 0 1px #a2a3a5;
+                    border-radius: 30px;
+                    padding: 15px 20px;
+                    margin-top: 10px;
+                }
+            }
+
+            .features-section {
+
+            }
+
+            .colours-section {
+                .title {
+
+                }
+
+                .colours {
+                    display: flex;
+
+                    .selected-outline {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 52px;
+                        width: 52px;
+                        border: 3px solid white;
+                        border-radius: 50%;
+                        margin: 0 5px;
+
+                        .colour {
+                            cursor: pointer;
+                            height: 40px;
+                            width: 40px;
+                            border-radius: 50%;
+                            background-position: center !important;
+                            background-size: cover !important;
+                        }
+                    }
+                }
+            }
+
+
+        }
+
+    }
+
+}

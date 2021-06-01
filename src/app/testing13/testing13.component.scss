@@ -1,0 +1,22 @@
+.num-grid {
+    padding: 20px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+    grid-auto-rows: 1fr;
+    grid-column-gap:5px;
+    grid-row-gap:5px;
+
+    .grid-item {
+        width:60px;
+        height:60px;
+        background-color: #64B5F6;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        font-size: 14px;
+        font-weight: 600;
+        border-radius: 5px;
+    }
+}

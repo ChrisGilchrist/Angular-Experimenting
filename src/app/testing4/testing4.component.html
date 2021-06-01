@@ -1,0 +1,123 @@
+<div class="component-container">
+
+    <div class="side-bar">
+        <div class="content">
+            <div class="filter-header">
+                Filters
+            </div>
+            <div class="section" *ngFor="let item of filterItems">
+                <div class="header">
+                    <div class="title">{{ item.title }}</div>
+                    <div class="drop-icon" (click)="item.opened =! item.opened">
+                        <fa-icon [icon]="item.opened ? faChevronUp : faChevronDown"></fa-icon>
+                    </div>
+                </div>
+
+                <div *ngIf="item.opened" class="options" [ngClass]="item.opened ? 'opened' : ''">
+                    <select>
+                        <option>Option 1</option>
+                        <option>Option 1</option>
+                    </select>
+                    <select>
+                        <option>Option 1</option>
+                        <option>Option 1</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+
+        <div class="info-panel">
+            <div class="left">
+                <div class="title">Cazoo Used cars</div>
+                <div class="second">
+                    <div class="breadcrumb-container">
+                        <div class="item">Home</div>
+                        <div class="item">Used cars</div>
+                    </div>
+                </div>
+
+                <div class="car-stats">
+                    1 - 24 of 4245 results
+                </div>
+
+            </div>            
+
+            <div class="right">
+                <span class="mr-3">Sort by</span>
+                <div class="select-container">
+                    <select>
+                        <option>Recnetly Added</option>
+                    </select>
+                    <span class="drop-icon"> <fa-icon [icon]="faChevronDown"></fa-icon></span>
+                   
+                </div>
+
+            </div>
+        </div>
+
+        <div class="warning-msg">
+            <div class="title">Representative example (PCP)</div>
+            <div class="pricing-grid">
+                <div class="item">
+                    Borrowing £12,750 with a £1,000 deposit at a representative APR of 8.9%.
+                </div>
+                <div class="item">
+                    <div class="desc">48 monthly payments</div>
+                    <div class="price">£243.98</div>
+                </div>
+                <div class="item">
+                    <div class="desc">48 monthly payments</div>
+                    <div class="price">£243.98</div>
+                </div>
+                <div class="item">
+                    <div class="desc">48 monthly payments</div>
+                    <div class="price">£243.98</div>
+                </div>
+                <div class="item">
+                    <div class="desc">48 monthly payments</div>
+                    <div class="price">£243.98</div>
+                </div>
+                <div class="item">
+                    <div class="desc">48 monthly payments</div>
+                    <div class="price">£243.98</div>
+                </div>
+                <div class="item">
+                    <div class="desc">48 monthly payments</div>
+                    <div class="price">£243.98</div>
+                </div>
+                <div class="item">
+                    <div class="desc">48 monthly payments</div>
+                    <div class="price">£243.98</div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="exercise-grid">
+            <div class="item" *ngFor="let item of items">
+                <div class="item-pic">
+                    <img
+                        src="https://res.cloudinary.com/cazoo/image/upload/c_scale,f_auto,h_1080,q_auto,w_1920/aos-cazoo-imagery/2657/cazoo/PE67JXC/05.jpg">
+                </div>
+                <div class="item-info">
+                    <div class="car-title">Audi Q3</div>
+                    <div class="car-desc">2L S line Edition TDI</div>
+                    <div class="tags">
+                        <div class="tag">44,776 miles</div>
+                        <div class="tag">2019 reg</div>
+                    </div>
+                    <div class="prices">
+                        <div class="full">£18,175</div>
+                        <div class="monthly">£288 / month PCP</div>
+                    </div>
+                    <button class="view" (click)="carSelected()">View this car</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

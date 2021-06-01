@@ -1,0 +1,13 @@
+.container {
+    width: 100%;
+    height: calc(100vh - 40px);
+    display: flex;
+    
+    .filter {
+        width: 300px;
+    }
+
+    .results {
+        flex-grow: 1;
+    }
+}

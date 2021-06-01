@@ -1,0 +1,19 @@
+.filter {
+    border-right: 2px solid grey;
+    height: 100%;
+
+    .filter-content {
+
+        .filter {
+            font-size: 10;
+        }
+
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+
+        * {
+            flex-grow: 1 !important;
+        }
+    }
+}

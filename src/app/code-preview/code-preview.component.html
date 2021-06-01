@@ -1,0 +1,10 @@
+<div class="card mt-4" *ngIf="!hideCodePreview">
+    <div class="card-body">
+        <ul ngbNav #nav="ngbNav" [(activeId)]="activeTab" class="nav-tabs">
+
+            <ng-content></ng-content>
+            
+        </ul>
+        <div [ngbNavOutlet]="nav" class="mt-2"></div>
+    </div>
+</div>

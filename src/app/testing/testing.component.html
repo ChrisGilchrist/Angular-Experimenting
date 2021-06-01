@@ -1,0 +1,94 @@
+<div class="content-container">
+
+    <div class="control-panel">
+        <div class="left">Press the space bar to generate color palettes!</div>
+        <div class="right">
+            <div class="nav-item">
+                <fa-icon [icon]="faEllipsisH"></fa-icon>
+            </div>
+            <span class="seperator"></span>
+            <div class="nav-item">
+                <fa-icon [icon]="faCamera"></fa-icon>
+            </div>
+            <span class="seperator"></span>
+            <div class="nav-item">
+                <fa-icon [icon]="faRedo"></fa-icon>
+            </div>
+            <div class="nav-item">
+                <fa-icon [icon]="faUndo"></fa-icon>
+            </div>
+
+            <span class="seperator"></span>
+
+            <div class="nav-item">
+                <fa-icon [icon]="faEye"></fa-icon>
+                View
+            </div>
+
+            <div class="nav-item">
+                <fa-icon [icon]="faSave"></fa-icon>
+                Save
+            </div>
+
+            <span class="seperator"></span>
+            <div class="nav-item" [ngClass]="sideBarOpen ? 'rotate' : ''" (click)="sideBarOpen = !sideBarOpen">
+                <fa-icon [icon]="faBars"></fa-icon>
+            </div>
+        </div>
+    </div>    
+
+    <div class="main-container">
+
+        <div class="color-container" cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event)">
+            <ng-container *ngFor="let color of colors">
+                <div cdkDrag cdkDragBoundary=".color-container" class="color" [style.background-color]="color">
+                    <ng-template [ngTemplateOutlet]="options" [ngTemplateOutletContext]="{color: color}"></ng-template>
+                    <div class="value">
+                        {{ color.substr(1, color.lenth) }}
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+
+        <div class="sidebar" [hidden]="!sideBarOpen" [ngClass]="!sideBarOpen ? 'close' : 'open'">
+            <div class="header">
+                <div class="title selected">
+                    Library
+                </div>
+                <div class="title">
+                    Explore
+                </div>
+            </div>
+            <div class="body">
+                Sign in to view your palettes.
+
+                <button type="button">Sign In</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<ng-template #options let-color="color">
+    <div class="option-menu">
+        <div class="option" placement="top" ngbTooltip="Close colour" (click)="deleteColor(color)">
+            <fa-icon [icon]="faTimes"></fa-icon>
+        </div>
+        <div cdkDragHandle class="option" placement="top" ngbTooltip="Move color" >
+            <fa-icon [icon]="faArrowsAltH"></fa-icon>
+        </div>
+        <div class="option" placement="top" ngbTooltip="Favourite color">
+            <fa-icon [icon]="faStar"></fa-icon>
+        </div>
+        <div class="option" placement="top" ngbTooltip="Tooltip on top">
+            <fa-icon [icon]="faUndo"></fa-icon>
+        </div>
+        <div class="option" placement="top" ngbTooltip="Copy {{ color }}">
+            <fa-icon [icon]="faCopy"></fa-icon>
+        </div>
+        <div class="option" placement="top" ngbTooltip="Tooltip on top">
+            <fa-icon [icon]="faLock"></fa-icon>
+        </div>
+    </div>
+</ng-template>

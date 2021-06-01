@@ -1,7 +1,32 @@
-<div class="nav-bar">
-    THIS IS THE NAV BAR
+<div id="pageContainer" class="page-container">
+
+    <div class="nav-bar">
+        THIS IS THE NAV BAR
+    </div>    
+
+    <div class="content">
+        <router-outlet></router-outlet>
+    </div>
+    
+    <app-bottom-panel>
+
+        <app-tab #tab [tabTitle]="'Test1'">Tab 1 Contentr</app-tab>
+        <app-tab #tab [tabTitle]="'Test2'">Tab 2 Contentr</app-tab>
+        <app-tab #tab  [tabTitle]="'Testing title'">Tab 3 Contentr</app-tab>
+
+        <ng-container *ngFor="let num of numPanels; let i = index">
+            <app-tab #tab  [tabTitle]="'Num Panel ' + i" [icon]="'faPlus'">
+                <app-testing13 [nums]="num.nums" [inPanel]="true"></app-testing13>
+            </app-tab>
+        </ng-container>
+
+    </app-bottom-panel>
+    
+
 </div>
 
-<div class="container">
-    <router-outlet></router-outlet>
-</div>
+
+<!--
+<div class="footer">
+    THIS IS THE FOOTER
+</div>--->

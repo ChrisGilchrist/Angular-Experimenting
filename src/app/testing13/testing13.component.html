@@ -1,0 +1,7 @@
+<button *ngIf="!inPanel" class="btn btn-sm btn-primary mt-3 ml-3" (click)="moveToPanel()">Move to Panel</button>
+
+<div class="num-grid">
+    <div class="grid-item" *ngFor="let num of nums">
+        {{ num }}
+    </div>
+</div>

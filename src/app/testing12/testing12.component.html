@@ -1,0 +1,70 @@
+<div class="wrapper">
+    <div class="content p-3">
+
+        <form [formGroup]="form">
+            <div formGroupName="users">
+                <div formGroupName="user1" class="form-row">
+                    <div class="col-md-6">
+                        <label class="form-control-label">Test</label>
+                        <input formControlName="username" class="form-control" type="input">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-control-label">Test</label>
+                        <input formControlName="firstName" class="form-control" type="input">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-control-label">Test</label>
+                        <input formControlName="secondName" class="form-control" type="input">
+                    </div>
+                </div>
+
+                <div formGroupName="user2" class="form-row">
+                    <div class="col-md-6">
+                        <label class="form-control-label">Test</label>
+                        <input formControlName="username" class="form-control" type="input">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-control-label">Test</label>
+                        <input formControlName="firstName" class="form-control" type="input">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-control-label">Test</label>
+                        <input formControlName="secondName" class="form-control" type="input">
+                    </div>
+                </div>
+
+                <div formGroupName="user3" class="form-row">
+                    <div class="col-md-6">
+                        <label class="form-control-label">Test</label>
+                        <input formControlName="username" class="form-control" type="input">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-control-label">Test</label>
+                        <input formControlName="firstName" class="form-control" type="input">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-control-label">Test</label>
+                        <input formControlName="secondName" class="form-control" type="input">
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+        <button type="button" (click)="preFillForm()">Pre Fill Form</button>
+        <button type="button" (click)="saveForm()">Pre Fill Form</button>
+
+    </div>
+    <div [style.height.px]="height" class="bottom-bar">
+        <button (click)="showBottomBar =! showBottomBar">Toggle</button>
+        <button (click)="makeBigger()">Make Bigger</button>
+        <button (click)="makeSmaller()">Make Smaller</button>
+        <div *ngIf="showBottomBar" class="bb-content">
+            Content of bb
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    Footer
+</div>
