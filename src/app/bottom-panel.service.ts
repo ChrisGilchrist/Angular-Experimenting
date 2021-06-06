@@ -20,6 +20,9 @@ export class BottomPanelService {
   numPanels: NumPanel [] = [];
   numPanelsChange: Subject<NumPanel[]> = new Subject<NumPanel[]>();
 
+  codeEditors = 0;
+  codeEditorsChange: Subject<Number> = new Subject<Number>();
+
   constructor() { }
 
   getConnection(id): DataConnection {
@@ -64,6 +67,11 @@ export class BottomPanelService {
     //   conn.dataSubject.next(rndNum);
     //   this.pulseData(conn);
     // }, 3000);
+  }
+
+  moveCodeToBottomPanel() {
+    this.codeEditors += 1;
+    this.codeEditorsChange.next(this.codeEditors);
   }
 
 }

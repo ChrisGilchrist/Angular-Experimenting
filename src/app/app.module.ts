@@ -47,6 +47,7 @@ import { monacoConfig } from './monaco-editor-config/monaco-editor-config';
 import { Testing12Component } from './testing12/testing12.component';
 import { Testing13Component } from './testing13/testing13.component';
 import { BottomPanelComponent, TabComponent } from './bottom-panel/bottom-panel.component';
+import { CodeEditorComponent } from './code-editor/code-editor.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import { BottomPanelComponent, TabComponent } from './bottom-panel/bottom-panel.
     Testing12Component,
     Testing13Component,
     TabComponent,
-    BottomPanelComponent
+    BottomPanelComponent,
+    CodeEditorComponent
   ],
   imports: [
     BrowserModule,
@@ -99,7 +101,7 @@ import { BottomPanelComponent, TabComponent } from './bottom-panel/bottom-panel.
     MarkdownModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
-    MonacoEditorModule.forRoot(monacoConfig)
+    MonacoEditorModule.forRoot()
   ],
   providers: [
   ],

@@ -9,10 +9,16 @@ import { BottomPanelService, NumPanel } from '../bottom-panel.service';
 export class ShellComponent implements OnInit {
 
   numPanels = [];
+  codeEditors: Number = 0;
 
   constructor(private bottomPanelService: BottomPanelService) { 
     this.bottomPanelService.numPanelsChange.subscribe(panels => {
       this.numPanels = panels
+      console.log(this.numPanels);
+    });
+
+    this.bottomPanelService.codeEditorsChange.subscribe((codeEditors: Number) => {
+      this.codeEditors = codeEditors
       console.log(this.numPanels);
     });
   }

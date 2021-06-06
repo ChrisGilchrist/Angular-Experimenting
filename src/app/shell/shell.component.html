@@ -20,6 +20,13 @@
             </app-tab>
         </ng-container>
 
+        <ng-container *ngFor="let editors of [].constructor(codeEditors); let i = index">
+            <app-tab #tab [tabTitle]="'Code Editor ' + i" [icon]="'faCode'">
+                <app-code-editor></app-code-editor>
+            </app-tab>
+        </ng-container>
+
+
     </app-bottom-panel>
     
 

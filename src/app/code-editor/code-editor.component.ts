@@ -1,58 +1,53 @@
-import { Component, OnInit } from '@angular/core';
-import { ModalDismissReasons, NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Testing10Component } from '../testing10/testing10.component';
-import { MockData } from '../monaco-editor-config/mock-data';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { DiffEditorModel } from 'ngx-monaco-editor';
 import * as YAML from 'yaml'
+import { BottomPanelService } from '../bottom-panel.service';
+import { MockData } from '../monaco-editor-config/mock-data';
 
 @Component({
-  selector: 'app-testing11',
-  templateUrl: './testing11.component.html',
-  styleUrls: ['./testing11.component.scss']
+  selector: 'app-code-editor',
+  templateUrl: './code-editor.component.html',
+  styleUrls: ['./code-editor.component.scss']
 })
-export class Testing11Component implements OnInit {
+export class CodeEditorComponent implements OnInit {
 
-  closeResult: any;
-
-  mockData: MockData = new MockData();
-
-  editor: any;
 
   user = {
-      "id": 1,
-      "name": "Leanne Graham",
-      "username": "Bret",
-      "email": "Sincere@april.biz",
-      "address": {
+    "id": 1,
+    "name": "Leanne Graham",
+    "username": "Bret",
+    "email": "Sincere@april.biz",
+    "address": {
       "street": "Kulas Light",
       "suite": "Apt. 556",
       "city": "Gwenborough",
       "zipcode": "92998-3874",
       "geo": {
-          "lat": "-37.3159",
-          "lng": "81.1496"
+        "lat": "-37.3159",
+        "lng": "81.1496"
       }
-      },
-      "phone": "1-770-736-8031 x56442",
-      "website": "hildegard.org",
-      "company": {
+    },
+    "phone": "1-770-736-8031 x56442",
+    "website": "hildegard.org",
+    "company": {
       "name": "Romaguera-Crona",
       "catchPhrase": "Multi-layered client-server neural-net",
       "bs": "harness real-time e-markets"
-      }
+    }
   }
+
+  mockData: MockData = new MockData();
 
   language = 'yaml';
   theme = 'light';
   compareMode = false;
-  inlineDiff = false;
-
-  constructor(private modalService: NgbModal) { }
+  inlineDiff = true;
 
   editorOptions = {
     theme: 'vs-light', 
     language: 'yaml', 
     readOnly: false,
+    renderSideBySide: this.inlineDiff,
     minimap: { enabled: false },
     lineNumbers: false
   };
@@ -68,17 +63,15 @@ export class Testing11Component implements OnInit {
     language: 'yaml'
   };
 
-  ngOnInit(): void {
-    this.code = this.mockData.getMockJson();
 
-    //this.originalModel.code = JSON.stringify(this.user, undefined, 4);
-    this.modifiedModel.code = YAML.stringify(this.user);
-    this.originalModel.code = YAML.stringify(this.user);
-
-    //this.originalModel.code = this.mockData.compObjOne();
-    //this.modifiedModel.code = this.mockData.compObjTwo();
+  constructor(public bottomPanelService: BottomPanelService) {
   }
 
+  ngOnInit(): void {
+    this.code = this.mockData.getMockJson();
+    this.modifiedModel.code = YAML.stringify(this.user);
+    this.originalModel.code = YAML.stringify(this.user);
+  }
 
   languageSelected(): void {
 
@@ -100,7 +93,7 @@ export class Testing11Component implements OnInit {
 
     this.originalModel = {...this.originalModel, language: this.language}
     this.modifiedModel = {...this.modifiedModel, language: this.language}
-    this.editorOptions = {...this.editor, language: this.language};
+    this.editorOptions = {...this.editorOptions, language: this.language};
     Object.assign({}, this.editorOptions, {language: this.language});
   }
 
@@ -110,40 +103,7 @@ export class Testing11Component implements OnInit {
   }
 
   onChangeInline(): void {
-    this.editorOptions = Object.assign({}, this.editorOptions, { renderSideBySide: true });
+    this.editorOptions = Object.assign({}, this.editorOptions, { renderSideBySide: this.inlineDiff });
   }
 
-
-
-
-
-
-  open(content): void {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title', size: 'xl'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
-  }
-
-  open2(): void {
-    const modalRef = this.modalService.open(Testing10Component);
-    modalRef.componentInstance.name = 'World';
-  }
-
-  onInit(editor): void {
-    console.log(editor)
-    this.editor = editor;
-    editor.trigger('format', 'editor.action.format');
-  }
-
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return `with: ${reason}`;
-    }
-  }
 }
