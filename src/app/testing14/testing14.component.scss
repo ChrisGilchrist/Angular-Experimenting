@@ -1,0 +1,164 @@
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    
+    .left {
+
+    }
+
+    .right {
+        position: relative;
+
+        .popup-search {
+            transition: ease 3s;
+            padding: 10px;
+            background-color: white;
+            top:0;
+            right: 0;
+            position: absolute;
+            width: 300px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1),0 2px 4px -1px rgba(0,0,0,0.06);
+            border-radius: 4px;
+            z-index: 10;
+
+            
+            .popup-header {
+                display: flex;
+                align-items: center;
+
+                input {
+                    border:none !important;
+                    outline:none !important;
+                }
+
+                .btn-close {
+                    margin-left: 5px;
+                    color: rgb(207 214 228);
+                }
+            }
+
+            .popup-body {
+
+                .crypto-items {
+                    display: flex;
+                    flex-direction: column;
+
+                    .item {
+                        cursor: pointer;
+                        font-weight: 600;
+                        color: rgb(128 138 157);
+                    }
+
+                    .item-selected {
+                        background-color: rgb(248 250 253);
+                    }
+
+                }
+
+            }
+            
+        }
+
+    }
+}
+.outside-container {
+    position: relative;
+    display: inline-block;
+
+    .scroll-container {
+        border-radius: 5px;
+        display: flex;
+        padding: 20px;
+        position: relative;
+        width: 650px;
+        overflow: hidden;
+        cursor: pointer;
+        background: linear-gradient(rgb(248, 250, 253) 0%, rgba(248, 250, 253, 0) 413px);
+    }
+
+    .smooth-scroll {
+        scroll-behavior: smooth;
+    }
+    
+    .control {
+        z-index: 2;
+        position: absolute;
+        font-size: 20px;
+        color: grey;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: white;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .left {
+        left: 30px;
+    }
+
+    .right {
+        right: 30px;
+    }
+
+    .item {
+        flex-basis: 200px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        height: 75px;
+        background-color: white;
+        border-radius: 5px;
+    }
+
+}
+
+
+.table-container {
+
+    table {
+        color: rgb(34, 37, 49);
+
+        thead {
+            background-color: #17171a;
+            position: sticky;
+            top: 0;
+            tr {
+                th {
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    background-color: white;
+                    border-top: none !important;
+                    border-bottom: 1px solid #eff2f5 !important;
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                td {
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    border-bottom: 1px solid #eff2f5 !important;
+                }
+
+                .favourite {
+                    cursor: pointer;
+                    color: #a6b1c2;
+                }
+
+                .favourite:hover {
+                    color: #f6b87e;
+                }
+
+                .favourited {
+                    color: #f6b87e;
+                }
+
+                ::ng-deep .progress {
+                    height: 0.6rem !important;
+                }
+            }
+        }
+    }
+
+}

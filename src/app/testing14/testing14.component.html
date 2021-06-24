@@ -1,0 +1,76 @@
+<div class="top-bar">
+    <div class="left">
+        <div id="test"></div>
+    </div>
+    <div class="right">
+        <input #normalSearch type="text" class="form-control form-control-sm d-block">
+        <div #popupSearch class="popup-search d-none">
+
+            <div class="popup-header"> 
+                <input type="text" class="form-control form-control-sm mr-3" placeholder="Search by name...">
+                <span class="btn-close"><fa-icon [icon]="faTimes"></fa-icon></span>
+            </div>
+
+            <div class="popup-body">
+                <div class="crypto-items">
+                    <div (click)="selectedCryptoItem = item" [ngClass]="{ 'item-selected' : selectedCryptoItem === item }" class="item my-1 p-1" *ngFor="let item of cryptoItems; let i = index;">
+                        <img height=20 width=20 src="https://s2.coinmarketcap.com/static/img/coins/64x64/9711.png">
+                        Item {{ i }}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="outside-container">
+
+    <div (click)="scrollListLeft($event)" class="control left"><fa-icon [icon]="faChevronLeft"></fa-icon></div>
+    <div (click)="scrollListRight($event)" class="control right"><fa-icon [icon]="faChevronRight"></fa-icon></div>
+
+    <div #scrollContainer class="scroll-container m-4">
+
+        <div *ngFor="let item of [].constructor(10)" class="item mx-2 p-2">
+            <small class="font-weight-bold text-muted">Weekly AirDrops</small>
+            <div class="font-weight-bold">Submit Your watchlist and win USDT</div>
+        </div>
+    
+    </div>
+
+</div>
+
+<div class="table-container m-3">
+
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Column One</th>
+                <th>Column Two</th>
+                <th>Column Threw</th>
+                <th>Column Four</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let item of items let i = index;">
+                <td>
+                    <span class="favourite" [ngClass]="{ 'favourited' : item.favourited }" (click)="item.favourited =! item.favourited">
+                        <fa-icon [icon]="item.favourited ? faFullStar : faStar"></fa-icon>
+                    </span>
+                </td>
+                <td>{{ item.rowItem1 }}</td>
+                <td>{{ item.rowItem2 }}</td>
+                <td>{{ item.rowItem3 }}</td>
+                <td>
+                    {{ item.rowItem4 }}
+                    <p><ngb-progressbar type="secondary" [value]=item.rowItem4></ngb-progressbar></p>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+   
+
+</div>

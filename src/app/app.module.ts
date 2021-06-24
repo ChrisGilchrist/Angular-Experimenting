@@ -48,6 +48,7 @@ import { Testing12Component } from './testing12/testing12.component';
 import { Testing13Component } from './testing13/testing13.component';
 import { BottomPanelComponent, TabComponent } from './bottom-panel/bottom-panel.component';
 import { CodeEditorComponent } from './code-editor/code-editor.component';
+import { Testing14Component } from './testing14/testing14.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { CodeEditorComponent } from './code-editor/code-editor.component';
     Testing13Component,
     TabComponent,
     BottomPanelComponent,
-    CodeEditorComponent
+    CodeEditorComponent,
+    Testing14Component
   ],
   imports: [
     BrowserModule,
@@ -101,7 +103,8 @@ import { CodeEditorComponent } from './code-editor/code-editor.component';
     MarkdownModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
-    MonacoEditorModule.forRoot()
+    MonacoEditorModule.forRoot(),
+    //ChartsModule
   ],
   providers: [
   ],
