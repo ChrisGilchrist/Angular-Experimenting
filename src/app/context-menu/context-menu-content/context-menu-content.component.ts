@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ContentChild, ContentChildren, HostListener, OnInit, QueryList } from '@angular/core';
+import { AfterViewInit, Component, ContentChild, ContentChildren, EventEmitter, HostListener, OnInit, Output, QueryList } from '@angular/core';
 import { ContextMenuService } from 'src/app/Services/context-menu.service';
 import { ContextMenuItemDirective } from '../context-menu-item.directive';
 
@@ -11,8 +11,11 @@ export class ContextMenuContentComponent implements OnInit,AfterViewInit {
 
   contextItem: any;
   items: QueryList<ContextMenuItemDirective>;
+  @Output() public closeAllMenus: EventEmitter<{
+    event: MouseEvent;
+  }> = new EventEmitter();
 
-  constructor(private contextMenuService: ContextMenuService) { }
+  constructor() { }
 
   ngAfterViewInit(): void {
     console.log('Context Item Subject', this.contextItem);
@@ -22,8 +25,7 @@ export class ContextMenuContentComponent implements OnInit,AfterViewInit {
 
   @HostListener('document:click', ['$event'])
   public closeMenu(event: MouseEvent): void {
-    console.log(event.target);
-    this.contextMenuService.closeExistingOverlay();
+    this.closeAllMenus.emit({event});
   }
 
   ngOnInit(): void {

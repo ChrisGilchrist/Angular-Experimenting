@@ -58,6 +58,11 @@ export class ContextMenuService {
     compRef.instance.contextItem = contextMenuConfig.contextMenuItem;
     console.log('Component', contextMenuConfig.contextMenu)
     compRef.instance.items = contextMenuConfig.contextMenu.items;
+
+    compRef.instance.closeAllMenus.subscribe(() => {
+      console.log('Closing all menus')
+      this.closeExistingOverlay();
+    });
   }
 
   closeExistingOverlay(): void {
