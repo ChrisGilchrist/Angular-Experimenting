@@ -1,0 +1,23 @@
+<div class="hovering-tools">
+  <div class="card card-body">
+    <div class="d-flex">
+      <button class="btn btn-primary mr-2" (click)="increaseTimer()">
+        Increase Timer
+      </button>
+      <button class="btn btn-primary" (click)="decreaseTimer()">
+        Decrease Timer
+      </button>
+    </div>
+  </div>
+</div>
+<div #Log class="log">
+  <div *ngFor="let line of logLines">{{ line }}</div>
+</div>
+
+
+<div *ngIf="scrolled" class="message-container">
+    <div class="message" (mouseover)="hovering(true)" (mouseout)="hovering(false)">
+        {{ message }}
+    </div>
+    
+</div>

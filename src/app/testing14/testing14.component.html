@@ -46,10 +46,10 @@
         <thead>
             <tr>
                 <th></th>
-                <th>Column One</th>
-                <th>Column Two</th>
-                <th>Column Threw</th>
-                <th>Column Four</th>
+                <th style="cursor: pointer;" (click)="colOneSortUp =! colOneSortUp"><fa-icon class="mr-1" [icon]="colOneSortUp ? faCaretUp : faCaretDown"></fa-icon>Column One</th>
+                <th style="cursor: pointer;" (click)="colTwoSortUp =! colTwoSortUp"><fa-icon class="mr-1" [icon]="colTwoSortUp ? faCaretUp : faCaretDown"></fa-icon>Column Two</th>
+                <th style="cursor: pointer;" (click)="colThreeSortUp =! colThreeSortUp"><fa-icon class="mr-1" [icon]="colThreeSortUp ? faCaretUp : faCaretDown"></fa-icon>Column Threw</th>
+                <th style="cursor: pointer;" (click)="colFourSortUp =! colFourSortUp"><fa-icon class="mr-1" [icon]="colFourSortUp ? faCaretUp : faCaretDown"></fa-icon>Column Four</th>
             </tr>
         </thead>
 
@@ -60,12 +60,15 @@
                         <fa-icon [icon]="item.favourited ? faFullStar : faStar"></fa-icon>
                     </span>
                 </td>
-                <td>{{ item.rowItem1 }}</td>
-                <td>{{ item.rowItem2 }}</td>
-                <td>{{ item.rowItem3 }}</td>
-                <td>
-                    {{ item.rowItem4 }}
-                    <p><ngb-progressbar type="secondary" [value]=item.rowItem4></ngb-progressbar></p>
+                <td class="font-weight-bold">£12.30</td>
+                <td style="color: #16c784" class="font-weight-bold"><fa-icon class="mr-1" [icon]="faCaretUp"></fa-icon>4.78%</td>
+                <td style="color: #ea3943;" class="font-weight-bold"><fa-icon class="mr-1" [icon]="faCaretDown"></fa-icon>12.78%</td>
+                <td class="">
+                    <div class="d-flex justify-content-end font-weight-bold mb-1">
+                        <fa-icon style="color: #a6b0c3;" class="mr-2" [icon]="faInfoCircle" [ngbPopover]="popContent" popoverClass="my-custom-class" triggers="mouseenter:mouseleave"></fa-icon>
+                         1,324,030 LINK
+                    </div>
+                    <p><ngb-progressbar type="secondary" [value]=item.rowItem4 height="8px"></ngb-progressbar></p>
                 </td>
             </tr>
         </tbody>
@@ -74,3 +77,25 @@
    
 
 </div>
+
+
+<ng-template #popContent>
+    
+    <div style="width: 220px; font-size: 12px;">
+        <div class="d-flex justify-content-between">
+            <div class="font-weight-bold">Percentage</div>
+            <div>44.15%</div>
+        </div>
+        <p class="mt-1"><ngb-progressbar type="secondary" [value]=40 height="8px"></ngb-progressbar></p>
+        <div class="d-flex justify-content-between">
+            <div class="font-weight-bold">Circulating Supply</div>
+            <div>6,000,000,000 LINK</div>
+        </div>
+        <div class="d-flex justify-content-between">
+            <div class="font-weight-bold">Max Supply</div>
+            <div>10,000,000,000 LINK</div>
+        </div>
+    </div>
+
+
+</ng-template>

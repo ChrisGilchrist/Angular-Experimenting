@@ -1,0 +1,65 @@
+<div class="page-container p-4">
+
+    <div class="sidebar">
+        Hello
+    </div>
+
+    <div class="content">
+        <div class="content-wrapper">
+            
+            <div class="header font-weight-bold">Hello Chris</div>
+            <p class="welcome-text mt-3 font-weight-bold mb-4">Welcome back to your group dashboard. </p>
+        
+           <div class="row">
+        
+            <div class="col-md-4">
+                <div class="group-card">
+        
+                    <div class="group-card-body p-4 h-100 d-flex justify-content-center align-items-center flex-column"> 
+            
+                        <div class="title mt-3 font-weight-bold">Add New Group!</div>
+                        <div class="sub-title font text-center mt-3" style="max-width:250px">Feel like you need another? Click here to create a new group</div>
+            
+                    </div>
+            
+                </div>
+            </div>
+        
+        
+            <div *ngFor="let item of [].constructor(4)" class="col-md-4">
+        
+                <div class="group-card p-4">
+        
+                    <div class="group-card-body">
+            
+                        <div class="group-img-container">
+                            <img src="https://cdn.motor1.com/images/mgl/2RQQg/s1/1x1/volkswagen-new-logo.webp">
+                        </div>
+            
+                        <div class="title mt-3 font-weight-bold">Comp Science Group</div>
+                        <div class="sub-title font-weight-bold mt-1">Group Sub Title</div>
+                        <div class="description mt-3">Hello my name is chris and this is my amazing
+                             group that Ih ave created my uni project</div>
+            
+                        <div class="d-flex justify-content-between align-items-center mt-2">
+                            <div class="text-muted font-weight-bold">Date: 17/05/21</div>
+                            <div class="group-users d-flex">
+                                <div *ngFor="let item of [].constructor(4); let i = index;" class="group-user mr-1">
+                                    <div class="img"></div>
+                                </div>
+                            </div>
+                        </div>
+            
+                    </div>
+        
+                </div>
+            
+            </div>
+        
+           </div>
+
+        </div>
+    </div>
+
+
+</div>

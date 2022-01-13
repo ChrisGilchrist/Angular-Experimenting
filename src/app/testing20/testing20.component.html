@@ -1,0 +1,86 @@
+<div class="d-flex w-100 p-4">
+    <div class="border w-100 p-2 mr-4">
+        
+        <table class="table table-sm table-striped">
+            <tbody>
+                <tr>
+                    <td>Name</td>
+                    <td>{{ model1.name }}</td>
+                </tr>
+                <tr>
+                    <td>Picture</td>
+                    <td>{{ model1.picture }}</td>
+                </tr>
+                <tr>
+                    <td>Balance</td>
+                    <td>{{ model1.balance }}</td>
+                </tr>
+                <tr>
+                    <td>Greeting</td>
+                    <td>{{ model1.greeting }}</td>
+                </tr>
+                <tr>
+                    <td>Test</td>
+                    <td>{{ model1.test }}</td>
+                </tr>
+                <tr>
+                    <td>Tags</td>
+                    <td>{{ model1.tags.join(' | ') }}</td>
+                </tr>
+                <tr>
+                    <td>Friends</td>
+                    <td>
+                        <span *ngFor="let friend of model1.friends">{{ friend.name + ' | ' }}</span>
+                    </td>
+                </tr>
+            </tbody>
+
+            <!-- <ng-container *ngTemplateOutlet="Details; context: model1"></ng-container> -->
+
+        </table>
+
+    </div>
+    <div class="border w-100 p-2">
+        <table class="table table-sm table-striped">
+            <tbody>
+                <tr>
+                    <td>Name</td>
+                    <td>
+                        <span [innerHTML]="model2.name | highlightSearch:result: ['name']"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Picture</td>
+                    <td>
+                        <span [innerHTML]="model2.picture | highlightSearch:result: ['picture']"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Balance</td>
+                    <td>
+                        <span [innerHTML]="model2.balance | highlightSearch:result: ['balance']"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Greeting</td>
+                    <td>
+                        <span [innerHTML]="model2.greeting | highlightSearch:result: ['greeting']"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Friends</td>
+                 
+                        <!-- <span *ngFor="let friend of model2.friends">{{ friend.name + ' | ' }}</span> -->
+                        <td> <span [innerHTML]="model2.friends | highlightSearch2:result: ['friends']: 'name'"></span></td>
+                </tr>
+            </tbody>
+
+            <!-- <ng-container *ngTemplateOutlet="Details; context: model1"></ng-container> -->
+
+        </table>
+    </div>
+</div>
+
+<ng-template #Details let-user="user">
+
+</ng-template>

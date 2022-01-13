@@ -1,11 +1,12 @@
-import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
-import { faChevronCircleLeft, faChevronCircleRight, faChevronLeft, faTimesCircle, faChevronRight, faStar as faFullStar } from '@fortawesome/free-solid-svg-icons';
+import { Component, ElementRef, HostListener, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { faChevronCircleLeft, faChevronCircleRight, faChevronLeft, faTimesCircle, faChevronRight, faStar as faFullStar, faCaretUp, faCaretDown, faInfoCircle, faChevronCircleUp, faChevronCircleDown } from '@fortawesome/free-solid-svg-icons';
 import { faStar } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-testing14',
   templateUrl: './testing14.component.html',
-  styleUrls: ['./testing14.component.scss']
+  styleUrls: ['./testing14.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class Testing14Component implements OnInit {
 
@@ -14,6 +15,9 @@ export class Testing14Component implements OnInit {
   faStar = faStar;
   faFullStar = faFullStar;
   faTimes = faTimesCircle;
+  faCaretUp = faCaretUp;
+  faCaretDown = faCaretDown;
+  faInfoCircle = faInfoCircle;
 
   mouseDown = false;
   startX: any;
@@ -31,7 +35,10 @@ export class Testing14Component implements OnInit {
 
   selectedCryptoItem = this.cryptoItems[0];
 
-
+  colOneSortUp = false;
+  colTwoSortUp = false;
+  colThreeSortUp = false;
+  colFourSortUp = false;
 
   @ViewChild('scrollContainer') scrollContainer: ElementRef;
   @ViewChild('normalSearch') normalSearch: ElementRef;

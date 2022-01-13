@@ -1,0 +1,31 @@
+
+<button (click)="signIn(Test)">Sign In</button>
+<div>
+    <div class="toolbar">
+        <input type="color">
+    </div>
+    <canvas #drawingCanvas></canvas>
+</div>
+
+
+<ng-template #Test>
+
+    <div class="close-modal" (click)="closeModal()">
+        <fa-icon [icon]="faTimes"></fa-icon>
+    </div>
+
+    <div class="card card-body border-0">
+        
+        <p style="font-size: 22px;" class="font-weight-bold">Log In</p>
+        <p class="mt-0">New to CoinMarketCap? <a href="javascript:;">Create an account</a></p>
+        
+        <label class="font-weight-bold mt-2">Email Address</label>
+        <input type="input" placeholder="Enter you email address">
+
+        <label class="font-weight-bold mt-2">Password</label>
+        <input type="password" placeholder="Enter you password">
+
+        <button class="mt-4 font-weight-bold">Log In</button>
+
+    </div>
+</ng-template>

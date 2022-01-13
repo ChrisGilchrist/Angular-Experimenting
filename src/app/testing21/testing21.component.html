@@ -1,0 +1,39 @@
+<div class="toaster-container">
+    <div *ngFor="let toast of toasts">
+        <div class="alert alert-warning" *ngIf="!toast.component">This is a normal Toast with no component</div>
+    </div>
+    <ng-template toaster></ng-template>
+</div>
+
+
+<div>
+    <button class="btn btn-sm btn-primary" (click)="createToast()">Create Toast</button>
+    <button class="btn btn-sm btn-primary" (click)="createToastWithComponent()">Create Toast With Component</button>
+</div>
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div *ngFor="let user of users; let i = index;" class="col-md-6">
+            <div class="card mb-3 justify-content-center align-items-center" style="height: 200px" [contextMenu]="MenuOne" [contextItem]="user">
+                <b>{{ user.name }}</b>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Custom Context Menu One -->
+<app-context-menu #MenuOne>
+    <ng-template contextMenuItem let-item (emitEvent)="addItem($event.item)">Add Item</ng-template>
+    <ng-template contextMenuItem let-item (emitEvent)="editItem($event.item)">Edit Item</ng-template>
+    <ng-template contextMenuItem let-item (emitEvent)="deleteItem($event.item)">Delete Item</ng-template>
+</app-context-menu>
+
+<!-- Custom Context Menu Two -->
+<app-context-menu #MenuTwo>
+    <ng-template contextMenuItem>Menu Item Four</ng-template>
+    <ng-template contextMenuItem>Menu Item Five</ng-template>
+    <ng-template contextMenuItem>Menu Item Six</ng-template>
+</app-context-menu>

@@ -1,0 +1,26 @@
+.log {
+    height: 100%;
+    background-color: lemonchiffon;
+    overflow: auto;
+}
+
+.hovering-tools {
+    position: absolute;
+    right: 20px;
+    top: 70px;
+}
+
+.message-container {
+    position: absolute;
+    bottom:50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .message {
+        padding: 10px;
+        background: white;
+        width: unset;
+    }
+}

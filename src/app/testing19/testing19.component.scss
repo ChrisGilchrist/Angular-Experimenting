@@ -1,0 +1,73 @@
+.map-container {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+.map-container::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+.map-container ::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+.map {
+    position: relative;
+    width: 2000px;
+    height: 2000px;
+    background: #ddf5e2;
+    //background: url('https://www.dsogaming.com/wp-content/uploads/2018/03/15796-1520982444-173177597.jpg');
+
+    .plot {
+        position: absolute;
+        cursor: pointer;
+
+        img {
+            position: absolute;
+        }
+    }
+
+    
+}
+
+.dragging {
+    cursor: grabbing;
+}
+
+
+.popup-container {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    cursor: pointer ;
+
+    height: 400px;
+    width: 400px;
+    background: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+
+    .popup-header {
+        position: relative;
+        display: flex;
+        padding: 5px;
+        width: 100%;
+
+        .header-title {
+            display: flex;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .actions {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+    }
+
+    .popup-content {
+        padding: 20px;
+    }
+}

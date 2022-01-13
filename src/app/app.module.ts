@@ -28,7 +28,6 @@ import { GridsterModule } from 'angular-gridster2';
 import {MatIconModule} from '@angular/material/icon';
 import { WeekTodoListComponent } from './week-todo-list/week-todo-list.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { ContextMenuModule } from 'ngx-contextmenu';
 import { Testing2Component } from './testing2/testing2.component';
 import { MarkdownModule } from 'ngx-markdown';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -49,6 +48,21 @@ import { Testing13Component } from './testing13/testing13.component';
 import { BottomPanelComponent, TabComponent } from './bottom-panel/bottom-panel.component';
 import { CodeEditorComponent } from './code-editor/code-editor.component';
 import { Testing14Component } from './testing14/testing14.component';
+import { Testing15Component } from './testing15/testing15.component';
+import { Testing16Component } from './testing16/testing16.component';
+import { Testing17Component } from './testing17/testing17.component';
+import { Testing18Component } from './testing18/testing18.component';
+import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
+import { FieldComponent } from './dynamic-form/field/field.component';
+import { Testing19Component } from './testing19/testing19.component';
+import { HighlightSearchPipe, HighlightSearchPipe2, Testing20Component } from './testing20/testing20.component';
+import { Testing21Component } from './testing21/testing21.component';
+import { ToasterDirective } from './Directives/toaster.directive';
+import { ToasterComponent } from './toaster/toaster.component';
+import { ContextMenuComponent } from './context-menu/context-menu.component';
+import { ContextMenuItemDirective } from './context-menu/context-menu-item.directive';
+import { ContextMenuDirective } from './context-menu/context-menu.directive';
+import { ContextMenuContentComponent } from './context-menu/context-menu-content/context-menu-content.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +94,24 @@ import { Testing14Component } from './testing14/testing14.component';
     TabComponent,
     BottomPanelComponent,
     CodeEditorComponent,
-    Testing14Component
+    Testing14Component,
+    Testing15Component,
+    Testing16Component,
+    Testing17Component,
+    Testing18Component,
+    DynamicFormComponent,
+    FieldComponent,
+    Testing19Component,
+    Testing20Component,
+    HighlightSearchPipe,
+    HighlightSearchPipe2,
+    Testing21Component,
+    ToasterDirective,
+    ToasterComponent,
+    ContextMenuComponent,
+    ContextMenuItemDirective,
+    ContextMenuDirective,
+    ContextMenuContentComponent
   ],
   imports: [
     BrowserModule,
@@ -99,7 +130,6 @@ import { Testing14Component } from './testing14/testing14.component';
     GridsterModule,
     MatIconModule,
     MatCheckboxModule,
-    ContextMenuModule.forRoot(),
     MarkdownModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,

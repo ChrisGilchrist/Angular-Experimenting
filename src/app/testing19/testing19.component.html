@@ -1,0 +1,37 @@
+<div #Map [ngClass]="{ 'dragging' : dragging }" class="map-container" (mousedown)="mapMouseDown($event)" (mouseup)="mapMouseUp($event)" (mousemove)="mapMouseMove($event)">
+
+    <div class="map">
+        <!-- <div (click)="openPopup()" *ngFor="let plot of plots; let i = index;" [ngStyle]="{'transform': 'translate(' + plot.x + 'px, ' + plot.y + 'px)'}" class="plot">
+            <img 
+            [src]="plot.hovered ? plot.imgHover : plot.img"
+            (mouseover)="plot.hovered = true"
+            (mouseout)="plot.hovered = false">
+        </div> -->
+
+        <div (click)="openPopup()" *ngFor="let plot of plots; let i = index;" [ngStyle]="{'transform': 'translate(' + plot.x + 'px, ' + plot.y + 'px)'}" class="plot">
+            <img 
+            [src]="plot.img"
+            (mouseover)="plot.hovered = true">
+            <img (mouseout)="plot.hovered = false" *ngIf="plot.hovered" [src]="plot.imgHover">
+        </div>
+
+    </div>
+
+</div>
+
+
+<div cdkDrag *ngIf="showPopup" class="popup-container">
+    
+    <div class="popup-header">
+        <div class="header-title font-weight-bold">Town Hall</div>
+        <div class="actions">
+            <fa-icon [icon]="faArrowLeft"></fa-icon>
+            <fa-icon (click)="closePopup()" [icon]="faTimes"></fa-icon>
+        </div>
+    </div>
+
+    <div class="popup-content">
+        This is the content of popup
+    </div>
+
+</div>

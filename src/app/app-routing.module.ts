@@ -18,6 +18,13 @@ import { Testing11Component } from './testing11/testing11.component';
 import { Testing12Component } from './testing12/testing12.component';
 import { Testing13Component } from './testing13/testing13.component';
 import { Testing14Component } from './testing14/testing14.component';
+import { Testing15Component } from './testing15/testing15.component';
+import { Testing16Component } from './testing16/testing16.component';
+import { Testing17Component } from './testing17/testing17.component';
+import { Testing18Component } from './testing18/testing18.component';
+import { Testing19Component } from './testing19/testing19.component';
+import { Testing20Component } from './testing20/testing20.component';
+import { Testing21Component } from './testing21/testing21.component';
 
 // Shows how to create a layout where you dont have to ngIf the nav bar
 const routes: Routes = [
@@ -25,7 +32,6 @@ const routes: Routes = [
     path: '', component: ShellComponent,
     children: [
       { path: 'home', component: HomeComponent },
-      { path: 'browse', component: BrowseComponent },
       { path: 'test', component: TestingComponent },
       { path: 'test2', component: Testing2Component },
       { path: 'test3', component: Testing3Component },
@@ -39,11 +45,20 @@ const routes: Routes = [
       { path: 'test11', component: Testing11Component },
       { path: 'test12', component: Testing12Component },
       { path: 'test13', component: Testing13Component },
-      { path: 'test14', component: Testing14Component }
+      { path: 'test14', component: Testing14Component },
+      { path: 'test15', component: Testing15Component },
+      { path: 'test16', component: Testing16Component },
+      { path: 'test17', component: Testing17Component },
+      { path: 'test18', component: Testing18Component },
+      { path: 'test19', component: Testing19Component },
+      { path: 'test20', component: Testing20Component },
+      { path: 'test21', component: Testing21Component },
 
     ],
   },
-  { path: 'board', component: BoardComponent }
+  { path: 'board', component: BoardComponent },
+
+  { path: '**', redirectTo: 'home' }
   //{ path: 'login', component: LoginComponent }
 ];
 
