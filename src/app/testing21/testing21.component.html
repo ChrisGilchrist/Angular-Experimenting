@@ -26,9 +26,29 @@
 
 <!-- Custom Context Menu One -->
 <app-context-menu #MenuOne>
-    <ng-template contextMenuItem let-item (emitEvent)="addItem($event.item)">Add Item</ng-template>
+    <ng-template contextMenuItem let-item (emitEvent)="addItem($event.item)" [subMenu]="SubMenuOne">Add Item</ng-template>
+
+    <app-context-menu #SubMenuOne>
+        <ng-template contextMenuItem>Sub Menu One Option One</ng-template>
+        <ng-template contextMenuItem>Sub Menu One Option Two</ng-template>
+        <ng-template contextMenuItem>Sub Menu One Option Three</ng-template>
+    </app-context-menu>
+
     <ng-template contextMenuItem let-item (emitEvent)="editItem($event.item)">Edit Item</ng-template>
-    <ng-template contextMenuItem let-item (emitEvent)="deleteItem($event.item)">Delete Item</ng-template>
+    <ng-template contextMenuItem let-item (emitEvent)="deleteItem($event.item)" [subMenu]="SubMenuTwo">Delete Item</ng-template>
+
+    <app-context-menu #SubMenuTwo>
+        <ng-template contextMenuItem let-item [subMenu]="SubSubMenuTwo" (emitEvent)="subMenuOne()">Sub Menu Two Option One</ng-template>
+        <ng-template contextMenuItem let-item >Sub Menu Two Option Two</ng-template>
+        <ng-template contextMenuItem let-item>Sub Menu Two Option Three</ng-template>
+    </app-context-menu>
+
+    <app-context-menu #SubSubMenuTwo>
+        <ng-template contextMenuItem (emitEvent)="subsubMenuOne()">Sub Sub Menu Option One</ng-template>
+        <ng-template contextMenuItem>Sub Sub Menu Option Two</ng-template>
+        <ng-template contextMenuItem>Sub Sub Menu Option Three</ng-template>
+    </app-context-menu>
+
 </app-context-menu>
 
 <!-- Custom Context Menu Two -->

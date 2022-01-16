@@ -19,7 +19,8 @@ export class ContextMenuDirective {
       {
         contextMenu: this.contextMenu,
         event: event,
-        contextMenuItem: this.contextItem
+        contextMenuItem: this.contextItem,
+        parentContextMenu: null
       }
     );
     event.stopPropagation();

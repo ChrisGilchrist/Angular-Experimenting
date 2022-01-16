@@ -25,6 +25,7 @@ import { Testing18Component } from './testing18/testing18.component';
 import { Testing19Component } from './testing19/testing19.component';
 import { Testing20Component } from './testing20/testing20.component';
 import { Testing21Component } from './testing21/testing21.component';
+import { Testing22Component } from './testing22/testing22.component';
 
 // Shows how to create a layout where you dont have to ngIf the nav bar
 const routes: Routes = [
@@ -53,6 +54,7 @@ const routes: Routes = [
       { path: 'test19', component: Testing19Component },
       { path: 'test20', component: Testing20Component },
       { path: 'test21', component: Testing21Component },
+      { path: 'test22', component: Testing22Component }
 
     ],
   },

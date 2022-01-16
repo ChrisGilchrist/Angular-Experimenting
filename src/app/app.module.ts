@@ -63,6 +63,7 @@ import { ContextMenuComponent } from './context-menu/context-menu.component';
 import { ContextMenuItemDirective } from './context-menu/context-menu-item.directive';
 import { ContextMenuDirective } from './context-menu/context-menu.directive';
 import { ContextMenuContentComponent } from './context-menu/context-menu-content/context-menu-content.component';
+import { Testing22Component } from './testing22/testing22.component';
 
 @NgModule({
   declarations: [
@@ -111,7 +112,9 @@ import { ContextMenuContentComponent } from './context-menu/context-menu-content
     ContextMenuComponent,
     ContextMenuItemDirective,
     ContextMenuDirective,
-    ContextMenuContentComponent
+    ContextMenuContentComponent,
+    Testing22Component,
+
   ],
   imports: [
     BrowserModule,

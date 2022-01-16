@@ -10,9 +10,13 @@
 
 <div class="list-group">
     <div  class="list-group-item list-group-item">
-        <b>{{ contextItem.name }}</b>
+        <b>{{ contextItem.name  }}</b>
     </div>
-    <a (click)="item.triggerExecute($event, contextItem)" *ngFor="let item of items" href="javascript:;" class="list-group-item list-group-item-action">
+    <a (click)="item.triggerExecute($event, contextItem)" 
+        (mouseenter)="triggerSubMenu(item, $event)"
+        *ngFor="let item of items" 
+        href="javascript:;" class="list-group-item list-group-item-action">
+        <span *ngIf="item.subMenu" class="hasSubMenu"><fa-icon [icon]="faChevronRight"></fa-icon></span>
         <ng-template
               [ngTemplateOutlet]="item.template"
               [ngTemplateOutletContext]="{ $implicit : contextItem }"

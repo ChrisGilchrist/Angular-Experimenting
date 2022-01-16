@@ -72,4 +72,15 @@ export class Testing21Component implements OnInit, AfterViewInit {
     console.log('Delete Item', item);
   }
 
+
+
+  subMenuOne(): void {
+    console.log('This is to prove sub menu option one works');
+  }
+
+
+  subsubMenuOne(): void {
+    console.log('This is to prove that sub sub option one works');
+  }
+
 }

@@ -1,0 +1,30 @@
+<div class="aim-container">
+
+    <form *ngIf="showMenu" [formGroup]="form">
+        <div class="game-options card card-body">
+            <div class="form-group">
+                <label class="form-label">Target Count</label>
+                <input class="form-control" formControlName="targetCount" type="number" placeholder="0">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Difficulty</label>
+                <select formControlName="difficulty" class="form-control">
+                    <option *ngFor="let difficulty of difficulties | keyvalue">{{ difficulty.key | titlecase }}</option>
+                </select>
+            </div>
+            <button (click)="startGame()" class="btn btn-primary">Start Game</button>
+        </div>
+    </form>
+
+    <div>{{ gameTimer }}</div>
+    <div>{{ getScore() }}</div>
+    
+    <div 
+    (click)="targetClicked(target, i)" 
+    [ngClass]="{ 'hide' : !target.displayed }" 
+    *ngFor="let target of targets; let i = index" class="target"
+    [ngStyle]="{ top : target.x + 'px', left : target.y + 'px' }">
+        {{ i + 1 }}
+    </div>
+
+</div>
